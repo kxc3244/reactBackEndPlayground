@@ -22,9 +22,9 @@ app.get('/allrecords', (req, res) => {
 })
 
 
-app.get('/allrecord/id',(req,res)=>{
+app.get('/allrecord',(req,res)=>{
   const id = req.query.id;
-  const record = uuidData.find(i => i.id === id);
+  const record = uuidData.filter(i => i.id === id);
   res.send(record)
 })
 
