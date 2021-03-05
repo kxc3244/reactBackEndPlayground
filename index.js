@@ -22,6 +22,12 @@ app.get('/allrecords', (req, res) => {
 })
 
 
+app.get('/allrecord',(req,res)=>{
+  const id = req.query.id;
+  const record = uuidData.find(i => i.id === id);
+  res.send(record)
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
