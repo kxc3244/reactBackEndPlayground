@@ -25,6 +25,17 @@ app.get('/allrecords', (req, res) => {
 })
 
 
+app.get('/dummykey', (req, res) => {    
+
+     if(process.env.NODE_ENV === 'production'){
+      res.send(process.env.DUMMY_KEY);
+     }
+     else{
+       res.send('local Dummy Key')
+
+     }
+})
+
 
 app.get('/', (req, res) => {
   res.send(data)
